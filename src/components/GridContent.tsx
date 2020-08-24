@@ -15,10 +15,10 @@ const GridContent = () => {
             It has roots in a piece of classical.
           </Text>
         </Box>
-        {/* <Image
-        src="https://picsum.photos/seed/picsum/1920/1080"
-        sx={{ borderRadius: ".5rem" }}
-      /> */}
+        <Image
+          src="https://picsum.photos/seed/picsum/1920/1080"
+          sx={{ borderRadius: ".5rem" }}
+        />
         <Text
           sx={{
             fontFamily: `'IBM Plex Mono', monospace`,

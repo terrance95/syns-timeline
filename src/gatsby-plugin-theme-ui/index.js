@@ -28,7 +28,7 @@ export default {
     "1.953rem",
     "2.441rem",
     "3.052rem",
-    "5.96rem",
+    "3.815em",
   ],
-  breakpoints: ["1024px", "1600px"],
+  breakpoints: ["768px", "1400px", "2400px", "3000px"],
 }

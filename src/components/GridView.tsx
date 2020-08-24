@@ -17,13 +17,12 @@ const Grid = styled(Box)`
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
-
+  width: 80vw;
   padding-left: 8rem;
   padding-right: 8rem;
   margin: 0 auto;
 
   ${Board} {
-    height: 500px;
   }
 
   ${Board}:nth-child(3n) {

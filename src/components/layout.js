@@ -13,6 +13,7 @@ import "./layout.css"
 import { ThemeProvider } from "theme-ui"
 import theme from "../gatsby-plugin-theme-ui/"
 import { useColorMode } from "theme-ui"
+import SEO from "../components/seo"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -29,8 +30,8 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-
-      <main>{children}</main>
+      <SEO title="Synspective Timeline" />
+      <div>{children}</div>
       {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

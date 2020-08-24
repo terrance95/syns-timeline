@@ -1,28 +1,21 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Box, Text } from "theme-ui"
-import VideoCover from "react-video-cover"
+import Fade from "react-reveal/Fade"
 
-const heroImage = require("../images/earth.jpg")
-const backgroundVideo = require("../images/earth-2.mp4")
-
-const Background = styled(Box)`
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
-    url(${heroImage}) no-repeat center;
-  height: calc(100vh - 128px);
-  max-height: 1000px;
-  display: flex;
-  align-items: center;
-  background-size: cover;
-`
+const backgroundVideo = require("../images/earth.mp4")
+const backgroundVideoWEBM = require("../images/earth.webm")
+const fallbackImage = require("../images/earth.jpg")
 
 const HeroVideo = styled.video`
   min-width: 100%;
   min-height: 100%;
-  height: 98vh;
+  height: 100vh;
   width: 100%;
   object-fit: cover;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background-image: url(${fallbackImage});
+  background-size: cover;
 `
 
 const VideoOverlay = styled(Box)`
@@ -30,61 +23,104 @@ const VideoOverlay = styled(Box)`
   top: 0;
   left: 0;
   width: 100%;
-  height: 98vh;
+  height: 100vh;
   background-color: hsl(209 96% 4% / 0.75);
   z-index: 1;
-  display: flex;
-  align-items: center;
 `
 
-const Hero = () => {
+const Notification = styled(Box)`
+  width: 400px;
+  height: 300px;
+  background: white;
+`
+
+const Hero = ({ language = "english", languageHandler }) => {
   return (
-    <Box as="section" sx={{ height: "98vh", mt: "-92px" }}>
+    <Box as="section" sx={{ height: "100vh", mt: ["-94px", "-94px"] }}>
       <VideoOverlay>
         <Box
           sx={{
-            paddingLeft: 5,
-            maxWidth: "1600px",
-            width: "100%",
             margin: "0 auto",
             position: "absolute",
-            top: "40%",
+            bottom: ["50%", "45%"],
           }}
         >
           <Box
             sx={{
-              paddingLeft: 5,
+              paddingLeft: [4, "8rem", "8rem"],
             }}
           >
-            <Text
-              as="span"
-              color="accent"
-              sx={{
-                fontSize: 1,
-                fontFamily: "IBM Plex Mono",
-                fontWeight: 300,
-              }}
-            >
-              #CabotProject
-            </Text>
-            <Text
-              as="h1"
-              sx={{
-                color: "white",
-                fontSize: [5, "4.768rem"],
-                fontWeight: 400,
-                mt: 4,
-              }}
-            >
-              Explore Our Synspective
-              <br /> Company Milestones
-            </Text>
-            <Text sx={{ mt: 4, fontSize: 3, color: "hsl(180deg 16% 50%)" }}>
-              From Past to Present: A Timeline of Our Accomplishments
-            </Text>
+            <Fade top cascade>
+              <Text
+                as="h1"
+                sx={{
+                  color: "white",
+                  fontSize: [4, 5, 5],
+                  fontWeight: 400,
+                  mt: 4,
+                }}
+              >
+                {language === "english" ? (
+                  <>
+                    Explore Our Synspective
+                    <br /> Company Milestones
+                  </>
+                ) : (
+                  <>
+                    Synspective <br /> 成長の軌跡
+                  </>
+                )}
+              </Text>
+              <Text
+                sx={{
+                  mt: [3, 5],
+                  fontSize: [1, 1],
+                  color: "white",
+                  width: "24rem",
+                  fontWeight: 500,
+                  letterSpacing: ".025rem",
+                }}
+              >
+                {language === "english" ? (
+                  <> From Past To Present</>
+                ) : (
+                  <>創業からの歩み</>
+                )}
+              </Text>
+              <Text
+                sx={{
+                  mt: 3,
+                  fontSize: [1, 1],
+                  color: "hsl(180 7% 50% / 1)",
+                  maxWidth: "20rem",
+                  lineHeight: 1.5,
+                }}
+              >
+                {language === "english" ? (
+                  <>
+                    Discover the most pivotal moments in the history of our
+                    company.
+                  </>
+                ) : (
+                  <>
+                    「持続可能な未来を」宇宙産業
+                    <br /> を通して叶える我々の歴史
+                  </>
+                )}
+              </Text>
+              <Box
+                sx={{
+                  mt: 3,
+                  display: "flex",
+                  flexDirection: "row",
+                }}
+              >
+                {languageHandler}
+              </Box>
+            </Fade>
           </Box>
         </Box>
-        <Box
+        {/* <Box
           as="span"
           pl="8rem"
           sx={{
@@ -98,10 +134,11 @@ const Hero = () => {
           }}
         >
           Scroll down
-        </Box>
+        </Box> */}
       </VideoOverlay>
       <HeroVideo autoPlay muted loop>
         <source src={backgroundVideo} type="video/mp4" />
+        <source src={backgroundVideoWEBM} type="video/webm" />
       </HeroVideo>
     </Box>
   )
