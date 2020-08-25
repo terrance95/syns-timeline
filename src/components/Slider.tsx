@@ -27,7 +27,6 @@ const responsive = {
 
 const CardContainer = styled(Box)`
   background: hsl(208deg 89% 4%);
-  padding: 2rem;
   margin-right: 2rem;
   border: 1px solid rgb(255 255 255 / 10%);
   border-radius: 0.5rem;
@@ -38,7 +37,8 @@ const Card = ({ title, date, href, language }) => {
       <CardContainer
         sx={{
           userSelect: "none",
-          minHeight: ["100px", "  272px "],
+          minHeight: ["175px", "  272px "],
+          padding: ["1rem", "2rem"],
         }}
       >
         <Text
@@ -57,7 +57,7 @@ const Card = ({ title, date, href, language }) => {
         </Text>
         <Text
           sx={{
-            fontSize: "1.20rem",
+            fontSize: ["1rem", "1rem", "1.20rem"],
             color: "white",
             fontWeight: 500,
             letterSpacing: ".025rem",
@@ -163,7 +163,7 @@ const Container = styled.div`
 
 const TimelineSlider = ({ language = "english" }) => {
   return (
-    <Container sx={[4, 0]}>
+    <Container>
       {language == "english" ? (
         <>
           <Text
@@ -189,7 +189,7 @@ const TimelineSlider = ({ language = "english" }) => {
             dotListClass="slide-dots"
             transitionDuration={500}
             customTransition="transform 500ms ease-in-out"
-            removeArrowOnDeviceType={["mobile"]}
+            removeArrowOnDeviceType={["tablet", "mobile"]}
             swipeable
             draggable
             swipable

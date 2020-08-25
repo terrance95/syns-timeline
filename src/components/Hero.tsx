@@ -55,9 +55,10 @@ const Hero = ({ language = "english", languageHandler }) => {
                 as="h1"
                 sx={{
                   color: "white",
-                  fontSize: [4, 5, 5],
+                  fontSize: [2, 5, 5],
                   fontWeight: 400,
-                  mt: 4,
+                  mt: 3,
+                  display: "block",
                 }}
               >
                 {language === "english" ? (
@@ -73,10 +74,9 @@ const Hero = ({ language = "english", languageHandler }) => {
               </Text>
               <Text
                 sx={{
-                  mt: [3, 5],
-                  fontSize: [1, 1],
+                  mt: [4, 5],
+                  fontSize: ["1rem", 1],
                   color: "white",
-                  width: "24rem",
                   fontWeight: 500,
                   letterSpacing: ".025rem",
                 }}
@@ -90,7 +90,7 @@ const Hero = ({ language = "english", languageHandler }) => {
               <Text
                 sx={{
                   mt: 3,
-                  fontSize: [1, 1],
+                  fontSize: ["1rem", , 1],
                   color: "hsl(180 7% 50% / 1)",
                   maxWidth: "20rem",
                   lineHeight: 1.5,
