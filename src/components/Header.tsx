@@ -44,8 +44,8 @@ const Header = ({ language, languageHandler }) => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
+              flexDirection: ["column-reverse", "row"],
+              alignItems: ["flex-end", "center"],
             }}
           >
             <Box
@@ -53,7 +53,9 @@ const Header = ({ language, languageHandler }) => {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                mr: 4,
+                mr: [0, 4],
+                position: ["absolute", "static"],
+                top: 70,
               }}
             >
               {languageHandler}

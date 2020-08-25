@@ -48,7 +48,7 @@ const Card = ({ title, date, href, language }) => {
             fontFamily: "IBM Plex Mono",
             fontWeight: 400,
             color: "white",
-            pb: "1.5rem",
+            pb: ["1rem", "1.5rem"],
             display: "block",
             userSelect: "none",
           }}
@@ -75,7 +75,7 @@ const Card = ({ title, date, href, language }) => {
               letterSpacing: ".025rem",
               lineHeight: 1.5,
               userSelect: "none",
-              bottom: "2rem",
+              bottom: ["1rem", "2rem"],
               position: "absolute",
               textDecoration: "none",
             }}
@@ -99,6 +99,11 @@ const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   bottom: 0;
+
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    position: absolute;
+    bottom: -96px;
+  }
   @media (max-width: 768px) {
     height: 300px;
   }

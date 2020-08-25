@@ -42,7 +42,7 @@ const Hero = ({ language = "english", languageHandler }) => {
           sx={{
             margin: "0 auto",
             position: "absolute",
-            bottom: ["44%", "45%"],
+            bottom: ["59%", "45%"],
           }}
         >
           <Box
