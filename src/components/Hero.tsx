@@ -136,7 +136,7 @@ const Hero = ({ language = "english", languageHandler }) => {
           Scroll down
         </Box> */}
       </VideoOverlay>
-      <HeroVideo autoPlay muted loop>
+      <HeroVideo autoPlay muted loop poster={fallbackImage}>
         <source src={backgroundVideo} type="video/mp4" />
         <source src={backgroundVideoWEBM} type="video/webm" />
       </HeroVideo>
