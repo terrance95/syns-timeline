@@ -19,11 +19,9 @@ const EnglishButton = styled(Box)`
   color: ${(props: any) =>
     props.language === "english" ? `white` : `hsl(0deg 0% 100% / 33%)`};
   cursor: pointer;
-  font-size: 0.875rem;
 `
 
 const JapaneseButton = styled(Box)`
-  font-size: 0.875rem;
   color: ${(props: any) =>
     props.language === "japanese" ? `white` : `hsl(0deg 0% 100% / 33%)`};
   cursor: pointer;
@@ -39,6 +37,9 @@ const IndexPage = props => {
             <EnglishButton
               onClick={() => setLanguage("english")}
               language={language}
+              sx={{
+                fontSize: [".750rem", ".875rem"],
+              }}
             >
               EN
             </EnglishButton>
@@ -46,7 +47,7 @@ const IndexPage = props => {
               sx={{
                 mx: 2,
                 color: "hsl(0deg 0% 100% / 33%)",
-                fontSize: ".875rem",
+                fontSize: [".750rem", ".875rem"],
               }}
             >
               /
@@ -54,6 +55,9 @@ const IndexPage = props => {
             <JapaneseButton
               onClick={() => setLanguage("japanese")}
               language={language}
+              sx={{
+                fontSize: [".750rem", ".875rem"],
+              }}
             >
               JP
             </JapaneseButton>

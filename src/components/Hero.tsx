@@ -36,13 +36,13 @@ const Notification = styled(Box)`
 
 const Hero = ({ language = "english", languageHandler }) => {
   return (
-    <Box as="section" sx={{ height: "100vh", mt: ["-94px", "-94px"] }}>
+    <Box as="section" sx={{ height: "110vh", mt: ["-95px", "-94px"] }}>
       <VideoOverlay>
         <Box
           sx={{
             margin: "0 auto",
             position: "absolute",
-            bottom: ["50%", "45%"],
+            bottom: ["44%", "45%"],
           }}
         >
           <Box
