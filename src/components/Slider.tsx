@@ -158,7 +158,6 @@ const Container = styled.div`
 
   .react-multiple-carousel__arrow--right {
     right: 8rem;
-    position: fixed;
   }
 
   .react-multiple-carousel__arrow--left {
