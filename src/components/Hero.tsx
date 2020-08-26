@@ -130,7 +130,7 @@ const Hero = ({ language = "english", languageHandler }) => {
             </Fade>
           </Box>
         </Box>
-        <TimelineSlider />
+        <TimelineSlider language={language} />
         {/* <Box
           as="span"
           pl="8rem"
