@@ -66,9 +66,7 @@ const IndexPage = props => {
       />
       <Hero language={language} />
 
-      <Box>
-        <TImelineSlider language={language} />
-      </Box>
+      <Box>{/* <TImelineSlider language={language} /> */}</Box>
     </Layout>
   )
 }

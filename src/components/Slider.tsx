@@ -95,10 +95,11 @@ const Card = ({ title, date, href, language }) => {
 
 const Container = styled.div`
   position: absolute;
-  height: 400px;
+  /* height: 400px; */
   width: 100%;
   margin: 0 auto;
   bottom: 0;
+  height: 400px;
 
   @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
     position: absolute;
@@ -125,7 +126,6 @@ const Container = styled.div`
 
   .slide-dots {
     bottom: 20px;
-    position: fixed;
   }
 
   .slide-dots button {

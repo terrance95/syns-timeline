@@ -3,14 +3,17 @@
 
 html,
 body {
-  overflow: hidden;
+  min-height: 1000px;
+  /* font-family: -webkit-body; */
+  height: 100%;
+  background: "#010b13";
 }
 
 body {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 16px;
   margin: 0;
-  background: black;
+  background: #010b13;
 }
 
 .cursor {

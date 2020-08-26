@@ -2,6 +2,7 @@ import * as React from "react"
 import styled from "styled-components"
 import { Box, Text } from "theme-ui"
 import Fade from "react-reveal/Fade"
+import TimelineSlider from "./Slider"
 
 const backgroundVideo = require("../images/earth.mp4")
 const backgroundVideoWEBM = require("../images/earth.webm")
@@ -9,7 +10,8 @@ const fallbackImage = require("../images/earth.jpg")
 
 const HeroVideo = styled.video`
   min-width: 100%;
-  min-height: 100%;
+  min-height: 1000px;
+
   height: 100vh;
   width: 100%;
   object-fit: cover;
@@ -26,6 +28,7 @@ const VideoOverlay = styled(Box)`
   height: 100vh;
   background-color: hsl(209 96% 4% / 0.75);
   z-index: 1;
+  min-height: 1000px;
 `
 
 const Notification = styled(Box)`
@@ -36,7 +39,14 @@ const Notification = styled(Box)`
 
 const Hero = ({ language = "english", languageHandler }) => {
   return (
-    <Box as="section" sx={{ height: "110vh", mt: ["-95px", "-94px"] }}>
+    <Box
+      as="section"
+      sx={{
+        mt: ["-94px", "-98px"],
+        minHeight: "1000px",
+        background: "#010b13",
+      }}
+    >
       <VideoOverlay>
         <Box
           sx={{
@@ -120,6 +130,7 @@ const Hero = ({ language = "english", languageHandler }) => {
             </Fade>
           </Box>
         </Box>
+        <TimelineSlider />
         {/* <Box
           as="span"
           pl="8rem"
